@@ -1,5 +1,7 @@
 # Food-App
-Food app like zomato using html, CSS &amp; Js
+Food app like zomato using html, CSS &amp; Js 
+
+✅DeployLink: https://inspiring-gnome-8e6791.netlify.app
 
 # landing page
 ![Food App](https://user-images.githubusercontent.com/81063456/160273033-19fbfcfd-9876-4796-b1db-200a669c3daf.png)
