@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food App-Country food</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+a{
+    color: white;
+}
+a:hover{
+    color: orangered;
+}
+</style>
+<body>
+    <div class="notifDiv">
+        <div>
+            <div class="notification">
+       
+            </div>
+            <p><i class="fa-solid fa-xmark"></i></p>
+        </div>
+
+</div>
+    <div class="main" >
+        <div id="header">
+            <div class="nav" style="padding-top:30px ;">
+                <div><a href="./index.html"><img src="./mainlogo.png" alt="food app" style="width: 90%;" ></a></div>
+            
+                <ul>
+                   
+                    <li><a href="wallet.html">Wallet</a></li>
+                    <li><a href="like.html">Favorite</a></li>
+                    <li><a href="cart.html">Cart</a><sup></sup></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="searchSection">
+            <h1>Search <span>Country Food</span></h1>
+           <div><input type="search" placeholder="Search Your Country food" id="search" ><a href="./index.html" id="other"><i class="fa-solid fa-arrows-rotate"></i></a></div>
+            <button id="searchBtn">Search</button>
+            
+        </div>
+
+    </div>
+
+
+    <div class="foodShow">
+
+        <h1>Your <span>Favorite Food</span></h1>
+        <div id="show"></div>
+    </div>
+      
+</body>
+</html>
+<script type="module">
+
+// import navbar from './components/navbar.js';
+// let header = document.getElementById('header');
+// header.innerHTML = navbar();
+
+
+
+</script>
+<script src="./country.js"></script>

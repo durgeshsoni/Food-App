@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="login.css"> -->
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+body {
+    
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+}
+    a{
+       color: black;
+   }
+   a:hover{
+       color: orangered;
+   }
+   hr{
+       color: black;
+       width: 80%;
+       margin: auto;
+       margin-top: -20px;
+   }
+</style>
+<body>
+    <div class="notification">
+       
+    </div>
+ 
+        <div id="header"></div>
+        <div class="wallet">
+            <h1>Your <span style="color: orangered;">Wallet</span></h1>
+            <hr>
+            <div class="showMoney">0</div>
+            <input type="text" id="amount" placeholder="Add Money">
+            <button id="add">Add Money</button>
+        </div>
+        
+
+
+      
+</body>
+</html>
+<script type="module">
+
+import navbar from './components/navbar.js';
+let header = document.getElementById('header');
+header.innerHTML = navbar();
+
+
+
+var count = localStorage.getItem(Number("wallet")) || [];
+ 
+document.getElementById('add').addEventListener('click', function(){
+    
+    let amount = document.getElementById("amount").value;
+    
+    count =Number(amount);
+    let x = localStorage.getItem("wallet");
+
+    if(x ==null){
+    Number(x=0)
+    }
+    let sum = Number(x) + Number(amount);
+    count = sum;
+    localStorage.setItem("wallet", count);
+    document.getElementById('amount').value = "";
+    window.location.reload();
+    
+})
+
+
+let showMoney = () => {
+  
+    let money = localStorage.getItem('wallet');
+    document.getElementsByClassName('showMoney')[0].innerHTML = money;
+}
+showMoney ();
+
+</script>
+<script src="./index.js"></script>

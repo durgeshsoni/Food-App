@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food App-Like</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+}
+     a{
+        color: black;
+    }
+    a:hover{
+        color: orangered;
+    }
+</style>
+<body>
+        <div id="header" ></div>
+       <div class="heading"> <h1>Your <span>Favorite Food</span></h1></div>
+        <div class="likeshow"></div>
+</body>
+</html>
+<script type="module">
+
+import navbar from './components/navbar.js';
+let header = document.getElementById('header');
+header.innerHTML = navbar();
+</script>
+
+
+<script>
+    let data = JSON.parse(localStorage.getItem('like'))
+    
+    console.log(data)
+
+    function showData(data){
+       data.map(function(el,index){
+        
+            let div = document.createElement('div');
+            
+
+            let img = document.createElement('img');
+            img.src = el.img;
+
+            let p = document.createElement('h3');
+            p.innerHTML = el.name;
+
+            let btn = document.createElement('button');
+            btn.innerHTML =`<i class="fa-solid fa-trash"></i>`
+            btn.addEventListener("click", function(){
+                data.splice(index,1);
+                localStorage.setItem('like',JSON.stringify(data));
+                div.remove();
+            })
+
+
+            div.append(img,p,btn)
+            if(index%2==0){
+               div.style.backgroundColor = '#fff1f1';
+           }else{
+                div.style.backgroundColor = 'aliceblue';
+           }
+            document.querySelector('.likeshow').append(div);
+
+        })
+    }
+    showData(data)
+</script>
